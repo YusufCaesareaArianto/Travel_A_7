@@ -110,7 +110,7 @@ const Register = () => {
         <span>Already have an account?</span>{" "}
         <span
           className="text-[#00a9ff] cursor-pointer"
-          onClick={() => navigate("/login")}
+          onClick={() => navigate("/Login")}
         >
           Sign In Here
         </span>
