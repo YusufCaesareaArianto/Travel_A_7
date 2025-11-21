@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// FIX PATH ASSETS SESUAI FOLDER KAMU
 import bgRegis from "../assets/bg-regis.png";
-import frameAtas from "../assets/frame-atas.svg";
-import frameBawah from "../assets/frame-bawah.svg";
-import icon from "../assets/icon.svg";
-import logo from "../assets/logo.svg";
+import group0 from "../assets/logo.svg";
+import vector0 from "../assets/icon.svg";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -13,22 +12,20 @@ const Register = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    password: "",
+    password: ""
   });
 
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     localStorage.setItem("user", JSON.stringify(form));
-
-    alert("Account created!");
+    alert("Account created successfully!");
     navigate("/login");
   };
 
@@ -37,33 +34,22 @@ const Register = () => {
 
       <img
         src={bgRegis}
-        className="h-full absolute left-0 top-0 object-cover"
-        alt="bg-register"
-      />
-
-      <img
-        src={frameAtas}
-        className="absolute right-0 top-0"
-        alt="frame atas"
-      />
-      <img
-        src={frameBawah}
-        className="absolute right-0 bottom-0"
-        alt="frame bawah"
+        className="h-full absolute left-0 top-0"
+        alt="Background"
       />
 
       <form
         onSubmit={handleSubmit}
         className="absolute left-[1100px] top-[250px] w-[520px]"
       >
-        <img src={logo} alt="logo" className="w-[120px] mb-8" />
+        <img src={group0} alt="Logo" className="w-20 mb-4" />
 
-        <h1 className="text-[32px] font-bold mb-3">
+        <h1 className="text-[32px] font-bold mb-2">
           Create Your Account
         </h1>
 
-        <p className="text-[20px] text-gray-600 mb-10">
-          Discover hidden gems, exclusive offers, and unforgettable travel experiences in Yogyakarta.
+        <p className="text-[20px] text-gray-700 mb-10">
+          Discover hidden gems, exclusive offers and unforgettable travel experiences in Yogyakarta.
         </p>
 
         <label className="text-[20px] font-semibold">Name</label>
@@ -73,8 +59,8 @@ const Register = () => {
           placeholder="Enter your name..."
           value={form.name}
           onChange={handleChange}
-          className="w-full border border-[#00a9ff] rounded-[20px] px-5 py-3 mt-2 mb-6 bg-white"
           required
+          className="w-full border border-[#00a9ff] rounded-[20px] px-5 py-3 mt-2 mb-6"
         />
 
         <label className="text-[20px] font-semibold">Email</label>
@@ -84,8 +70,8 @@ const Register = () => {
           placeholder="Enter your email..."
           value={form.email}
           onChange={handleChange}
-          className="w-full border border-[#00a9ff] rounded-[20px] px-5 py-3 mt-2 mb-6 bg-white"
           required
+          className="w-full border border-[#00a9ff] rounded-[20px] px-5 py-3 mt-2 mb-6"
         />
 
         <label className="text-[20px] font-semibold">Password</label>
@@ -95,8 +81,8 @@ const Register = () => {
           placeholder="Enter your password..."
           value={form.password}
           onChange={handleChange}
-          className="w-full border border-[#00a9ff] rounded-[20px] px-5 py-3 mt-2 mb-10 bg-white"
           required
+          className="w-full border border-[#00a9ff] rounded-[20px] px-5 py-3 mt-2 mb-10"
         />
 
         <button
